@@ -40,6 +40,7 @@ h2 {
   font-size: 16px;
   outline: none;
   transition: border-color 0.3s;
+  letter-spacing: 1px;
 }
 
 .post-input-container input:focus {
@@ -187,9 +188,7 @@ h2 {
   gap: 10px;
 }
 
-.post-input-container input {
-  /* unchanged */
-}
+ 
 
 .post-input-container button {
   /* unchanged */
