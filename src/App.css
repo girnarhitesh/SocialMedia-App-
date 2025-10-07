@@ -54,6 +54,7 @@ h2 {
   border-radius: 6px;
   border: 1px solid #ccc;
   cursor: pointer;
+  letter-spacing: 0.5px;
 }
 
 
@@ -75,6 +76,7 @@ h2 {
   font-size: 16px;
   outline: none;
   transition: border-color 0.3s;
+  letter-spacing: 0.5px;
 }
 
 .post-input-container input:focus {
@@ -270,6 +272,19 @@ h2 {
   .post-input-container{
     width: 100%;
   }
+  .profile-info{
+    width: 100%;
+  }
+
+h2 {
+  color: #1c1e21;
+  margin-top: 0;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  width: 100%;
+}
 }
 
 /* B. टैबलेट / छोटे लैपटॉप (601px से 900px) */
