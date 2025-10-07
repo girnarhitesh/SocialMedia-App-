@@ -13,11 +13,11 @@ function App() {
     const [postText, setPostText] = useState("");
     const [commentText, setCommentText] = useState({});
     const [sortBy, setSortBy] = useState("recent");
-    const [newlyAddedPostId, setNewlyAddedPostId] = useState(null); // 💡 ट्रांज़िशन के लिए नया स्टेट
-    const [newlyAddedCommentId, setNewlyAddedCommentId] = useState(null); // 💡 ट्रांज़िशन के लिए नया स्टेट
+    const [newlyAddedPostId, setNewlyAddedPostId] = useState(null);  
+    const [newlyAddedCommentId, setNewlyAddedCommentId] = useState(null);  
 
 
-    // 1. Data Persistence: Local Storage में सेव करें
+ 
     useEffect(() => {
         localStorage.setItem('mini_social_posts', JSON.stringify(posts));
     }, [posts]);
@@ -45,17 +45,17 @@ function App() {
             user: CURRENT_USER,
             timestamp: new Date().toLocaleString(),
             comments: [],
-            isNew: true, // 💡 नई प्रॉपर्टी जोड़ी गई
+            isNew: true,  
         };
         
         setPosts([newPost, ...posts]);
         setPostText("");
-        setNewlyAddedPostId(newPost.id); // 💡 नया ID सेव करें
+        setNewlyAddedPostId(newPost.id);  
 
-        // 3. ट्रांज़िशन हटाने के लिए टाइमआउट
+ 
         setTimeout(() => {
             setNewlyAddedPostId(null);
-        }, 500); // 500ms बाद हटा दें
+        }, 500);  
     };
 
     const likePost = (id) => {
@@ -69,7 +69,7 @@ function App() {
     };
 
 
-    // Nested Data Management: Comment Logic
+ 
     const addComment = (postId) => {
         const text = commentText[postId] || '';
         if (text.trim() === "") return;
@@ -79,7 +79,7 @@ function App() {
             text: text,
             user: "Commenter", 
             timestamp: new Date().toLocaleTimeString(),
-            isNew: true, // 💡 नई प्रॉपर्टी जोड़ी गई
+            isNew: true,  
         };
 
         setPosts(posts.map(post => 
@@ -89,12 +89,12 @@ function App() {
         ));
         
         setCommentText(prev => ({ ...prev, [postId]: '' }));
-        setNewlyAddedCommentId(newComment.id); // 💡 नया ID सेव करें
+        setNewlyAddedCommentId(newComment.id);  
 
-        // 3. ट्रांज़िशन हटाने के लिए टाइमआउट
+          
         setTimeout(() => {
             setNewlyAddedCommentId(null);
-        }, 500); // 500ms बाद हटा दें
+        }, 500);  
     };
 
     const handleCommentChange = (postId, value) => {
@@ -110,7 +110,7 @@ function App() {
             
             <div className="profile-info">Posting as: <b>{CURRENT_USER}</b></div>
 
-            {/* Post Input Section (unchanged) */}
+        
             <div className="post-input-container">
                 <input
                     type="text"
@@ -127,7 +127,7 @@ function App() {
                 </button>
             </div>
             
-            {/* Sorting Control (unchanged) */}
+          
             <div className="sorting-control">
                 Sort By: 
                 <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
@@ -136,14 +136,14 @@ function App() {
                 </select>
             </div>
             
-            {/* Posts List */}
+          
             <div className="posts">
                 {sortedPosts.map(post => (
                     <div 
                         key={post.id} 
                         className={`post ${post.id === newlyAddedPostId ? 'fade-in' : ''}`}  
                     >
-                        {/* ... Post Content ... */}
+                      
                         <div className="post-header">
                             <span className="post-user">{post.user}</span>
                             <span className="timestamp">{post.timestamp}</span>
@@ -159,11 +159,11 @@ function App() {
                             </button>
                         </div>
 
-                        {/* Comments Section */}
+                    
                         <div className="comments-section">
                             <h4>Comments ({post.comments.length})</h4>
                             
-                            {/* Comment Input (unchanged) */}
+                       
                             <div className="comment-input-area">
                                 <input
                                     type="text"
@@ -177,7 +177,7 @@ function App() {
                                 </button>
                             </div>
 
-                            {/* Comment List */}
+                     
                             <div className="comment-list">
                                 {post.comments.map(comment => (
                                     <div 
@@ -194,7 +194,7 @@ function App() {
                 ))}
                 
                 {posts.length === 0 && (
-                  <p className="no-posts">अभी कोई पोस्ट नहीं है। पहली पोस्ट करें!</p>
+                  <p className="no-posts">No Post</p>
                 )}
             </div>
         </div>
