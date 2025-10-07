@@ -8,7 +8,7 @@ const initialPostState = () => {
     return savedPosts ? JSON.parse(savedPosts) : [];
 };
 
-// 💡 नया: फीडबैक मैसेज कंपोनेंट
+
 const FeedbackMessage = ({ message }) => {
     if (!message) return null;
     return (
@@ -25,16 +25,16 @@ function App() {
     const [sortBy, setSortBy] = useState("recent");
     const [newlyAddedPostId, setNewlyAddedPostId] = useState(null);  
     const [newlyAddedCommentId, setNewlyAddedCommentId] = useState(null);  
-    // 💡 नया स्टेट: सफलता संदेश दिखाने के लिए
+
     const [feedbackMessage, setFeedbackMessage] = useState(null); 
 
 
-    // Local Storage
+ 
     useEffect(() => {
         localStorage.setItem('mini_social_posts', JSON.stringify(posts));
     }, [posts]);
 
-    // Sorting Logic (unchanged)
+
     const getSortedPosts = useCallback(() => {
         let sortedPosts = [...posts];
         if (sortBy === 'liked') {
@@ -46,12 +46,12 @@ function App() {
     }, [posts, sortBy]);
 
 
-    // 💡 नया: मैसेज दिखाने और हटाने का फ़ंक्शन
+
     const showFeedback = (message) => {
         setFeedbackMessage(message);
         setTimeout(() => {
             setFeedbackMessage(null);
-        }, 3000); // 3 सेकंड बाद संदेश हटा दें
+        }, 3000); 
     };
 
 
@@ -73,7 +73,7 @@ function App() {
         setPostText("");
         setNewlyAddedPostId(newPost.id);  
         
-        showFeedback("✅ Post created successfully!"); // 💡 सफलता संदेश
+        showFeedback("✅ Post created successfully!"); 
 
         setTimeout(() => {
             setNewlyAddedPostId(null);
@@ -88,7 +88,7 @@ function App() {
 
     const deletePost = (id) => {
         setPosts(posts.filter(post => post.id !== id));
-        showFeedback("🗑️ Post deleted."); // 💡 सफलता संदेश
+        showFeedback("🗑️ Post deleted."); 
     };
 
 
@@ -114,7 +114,7 @@ function App() {
         setCommentText(prev => ({ ...prev, [postId]: '' }));
         setNewlyAddedCommentId(newComment.id);  
         
-        showFeedback("💬 Comment added successfully!"); // 💡 सफलता संदेश
+        showFeedback("💬 Comment added successfully!"); 
 
           
         setTimeout(() => {
@@ -132,7 +132,6 @@ function App() {
     return (
         <div className="App">
             
-            {/* 💡 फीडबैक मैसेज को सबसे ऊपर दिखाएं */}
             <FeedbackMessage message={feedbackMessage} /> 
 
             <h2>Mini Social Media App</h2>
