@@ -267,6 +267,9 @@ h2 {
     margin: 40px auto;
     padding: 50px; 
   }
+  .post-input-container{
+    width: 100%;
+  }
 }
 
 /* B. टैबलेट / छोटे लैपटॉप (601px से 900px) */
