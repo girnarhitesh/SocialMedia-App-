@@ -1,19 +1,23 @@
-/* App.css */
+/* App.css: Complete, Polished, and Responsive Styles */
+
+/* ========================================================== */
+/* 1. बेस/ग्लोबल स्टाइलिंग (Base/Global Styling) */
+/* ========================================================== */
 
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background-color: #e4e6eb;
-  /* Facebook/Social Media जैसा हल्का बैकग्राउंड */
+  background-color: #e4e6eb; /* हल्का सोशल मीडिया बैकग्राउंड */
 }
 
+/* 💡 मुख्य ऐप कंटेनर के लिए बेस स्टाइल */
 .App {
-  max-width: 600px;
+  max-width: 700px;
   margin: 40px auto;
-  padding: 20px;
+  padding: 30px;
   background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -23,135 +27,6 @@ h2 {
   border-bottom: 1px solid #ddd;
   padding-bottom: 15px;
   margin-bottom: 25px;
-}
-
-/* इनपुट कंटेनर स्टाइलिंग */
-.post-input-container {
-  display: flex;
-  margin-bottom: 25px;
-  gap: 10px;
-}
-
-.post-input-container input {
-  flex-grow: 1;
-  padding: 12px 18px;
-  border: 1px solid #ccc;
-  border-radius: 25px;
-  font-size: 16px;
-  outline: none;
-  transition: border-color 0.3s;
-  letter-spacing: 1px;
-}
-
-.post-input-container input:focus {
-  border-color: #1877f2;
-}
-
-.post-input-container button {
-  padding: 12px 20px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  background-color: #1877f2;
-  color: white;
-  font-weight: bold;
-  transition: background-color 0.2s, opacity 0.2s;
-}
-
-/* डिसेबल बटन स्टाइल */
-.post-input-container button:disabled {
-  background-color: #a2c8f8;
-  cursor: not-allowed;
-  opacity: 0.8;
-}
-
-.post-input-container button:hover:enabled {
-  background-color: #145dbf;
-}
-
-/* पोस्ट्स लिस्ट स्टाइलिंग */
-.post {
-  background-color: white;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-  border: 1px solid #f0f0f0;
-}
-
-.post-text {
-  margin: 0 0 10px 0;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #1c1e21;
-}
-
-.timestamp {
-  color: #606770;
-  font-size: 12px;
-  display: block;
-  margin-bottom: 15px;
-}
-
-.post-actions {
-  display: flex;
-  justify-content: flex-end;
-  /* बटन को दाएँ तरफ़ ले जाएँ */
-  gap: 10px;
-  padding-top: 10px;
-  border-top: 1px solid #f0f0f0;
-}
-
-.post-actions button {
-  background: none;
-  border: none;
-  color: #606770;
-  cursor: pointer;
-  font-size: 14px;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-.like-btn {
-  color: #1877f2 !important;
-  /* लाइक बटन का रंग नीला करें */
-  font-weight: 600;
-}
-
-.like-btn:hover,
-.delete-btn:hover {
-  background-color: #f2f2f2;
-}
-
-.no-posts {
-  text-align: center;
-  color: #606770;
-  padding: 20px;
-  border: 1px dashed #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-}
-
-/* App.css (पुराने कोड को इससे बदल दें) */
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background-color: #e4e6eb;
-}
-
-.App {
-  max-width: 700px;
-  /* थोड़ा चौड़ा किया गया */
-  margin: 40px auto;
-  padding: 30px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-  /* unchanged */
 }
 
 /* Profile Info */
@@ -181,29 +56,58 @@ h2 {
   cursor: pointer;
 }
 
-/* Post Input Container (unchanged) */
+
+/* ========================================================== */
+/* 2. इनपुट और बटन स्टाइलिंग (Input & Button Styling) */
+/* ========================================================== */
+
 .post-input-container {
   display: flex;
   margin-bottom: 25px;
   gap: 10px;
 }
 
- 
-
-.post-input-container button {
-  /* unchanged */
+.post-input-container input {
+  flex-grow: 1;
+  padding: 12px 18px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
 }
 
+.post-input-container input:focus {
+  border-color: #1877f2;
+}
+
+.post-input-container button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: #1877f2;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.2s, opacity 0.2s;
+}
+
+/* डिसेबल बटन स्टाइल */
 .post-input-container button:disabled {
-  /* unchanged */
+  background-color: #a2c8f8;
+  cursor: not-allowed;
+  opacity: 0.8;
 }
 
 .post-input-container button:hover:enabled {
-  /* unchanged */
+  background-color: #145dbf;
 }
 
 
-/* पोस्ट्स लिस्ट स्टाइलिंग */
+/* ========================================================== */
+/* 3. पोस्ट और कमेंट स्टाइलिंग (Post & Comment Styling) */
+/* ========================================================== */
+
 .post {
   background-color: white;
   padding: 20px;
@@ -225,15 +129,20 @@ h2 {
 }
 
 .post-text {
-  /* unchanged */
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #1c1e21;
 }
 
 .timestamp {
-  /* unchanged */
+  color: #606770;
+  font-size: 12px;
+  display: block;
 }
 
+/* Action Buttons */
 .post-actions {
-  /* ... (same as before) ... */
   display: flex;
   justify-content: flex-end;
   gap: 10px;
@@ -242,19 +151,36 @@ h2 {
 }
 
 .post-actions button {
-  /* unchanged */
+  background: none;
+  border: none;
+  color: #606770;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 .like-btn {
-  /* unchanged */
+  color: #1877f2 !important;
+  font-weight: 600;
 }
 
 .like-btn:hover,
 .delete-btn:hover {
-  /* unchanged */
+  background-color: #f2f2f2;
 }
 
-/* 💡 Comments Section Styles */
+.no-posts {
+  text-align: center;
+  color: #606770;
+  padding: 20px;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+
+/* Comments Section Styles */
 .comments-section {
   margin-top: 20px;
   padding-top: 15px;
@@ -304,10 +230,10 @@ h2 {
   font-size: 11px;
 }
 
-.no-posts {
 
-}
-
+/* ========================================================== */
+/* 4. ट्रांज़िशन और एनिमेशन (Transition & Animation) */
+/* ========================================================== */
 
 @keyframes fadeInSlide {
   from {
@@ -321,7 +247,6 @@ h2 {
   }
 }
 
-
 .post.fade-in {
   animation: fadeInSlide 0.5s ease-out;
 }
@@ -331,50 +256,61 @@ h2 {
 }
 
 
+/* ========================================================== */
+/* 5. रिस्पॉन्सिव डिज़ाइन (Responsive Design) */
+/* ========================================================== */
 
-/* --------------------------------------------------------- */
-/* 💡 रिस्पॉन्सिव डिज़ाइन सुधार (Responsive Design Improvements) */
-/* --------------------------------------------------------- */
-
-/* टैबलेट और छोटे लैपटॉप (601px से 899px) */
-@media (min-width: 601px) and (max-width: 899px) {
+/* A. डेस्कटॉप / बड़ी स्क्रीन (901px और ऊपर) */
+@media (min-width: 901px) {
   .App {
-    /* स्क्रीन को बहुत चौड़ा न करें, पर किनारों पर जगह दें */
-    max-width: 95%; 
-    margin: 30px 20px; 
-    padding: 30px;
+    max-width: 900px; 
+    margin: 40px auto;
+    padding: 50px; 
   }
 }
 
-/* फ़ोन (600px और उससे कम) */
+/* B. टैबलेट / छोटे लैपटॉप (601px से 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .App {
+    max-width: 95%; 
+    margin: 30px 20px; 
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    border-radius: 12px;
+  }
+}
+
+
+/* C. मोबाइल फ़ोन (600px और उससे कम) */
 @media (max-width: 600px) {
   .App {
-    /* फ़ोन पर पैडिंग कम करें */
+    max-width: 100%;
     padding: 15px; 
-    margin: 15px auto;
-    border-radius: 0; /* फ़ोन पर फुल-स्क्रीन जैसा लुक देने के लिए */
-    box-shadow: none; /* मोबाइल पर शैडो हटा दें */
+    margin: 0; 
+    border-radius: 0; 
+    box-shadow: none; 
   }
-
+  
   /* इनपुट और बटन को स्टैक करें (Vertical Stack) */
   .post-input-container {
     flex-direction: column;
     gap: 15px;
   }
   
-  /* इनपुट को फुल चौड़ाई दें */
+  /* इनपुट/बटन को फुल चौड़ाई दें */
   .post-input-container input {
-    width: 100%;
-    margin-right: 0;
-    padding: 15px; /* इनपुट की साइज़ थोड़ी बड़ी करें */
+    width: 100%; 
+    box-sizing: border-box; 
+    margin-right: 0; 
+    padding: 15px; 
   }
-
-  /* पोस्ट बटन को भी फुल चौड़ाई दें */
+  
   .post-input-container button {
     width: 100%;
     padding: 15px;
   }
   
+
   /* कमेंट इनपुट और बटन को भी स्टैक करें */
   .comment-input-area {
       flex-direction: column;
@@ -382,29 +318,31 @@ h2 {
   }
   .comment-input-area input {
       width: 100%;
+      box-sizing: border-box; 
   }
   .comment-input-area button {
       width: 100%;
   }
 
-  /* पोस्ट टेक्स्ट को पढ़ने में आसान बनाने के लिए फॉन्ट साइज़ थोड़ा कम करें */
+  /* छोटे फ़ॉन्ट साइज़ */
   .post-text {
       font-size: 15px;
   }
   
-  /* पोस्ट एक्शन्स को भी स्टैक करें (दाएँ से बाएँ की जगह) */
+  /* पोस्ट एक्शन्स (लाइक/डिलीट) */
   .post-actions {
-      justify-content: space-around;
-      /* gap को कम करें */
+      justify-content: space-between; 
       gap: 5px; 
   }
-}
-
-/* डेस्कटॉप (900px और उससे ऊपर) - यह आपकी ओरिजिनल क्वेरी थी */
-@media (min-width: 900px) {
-  .App {
-    max-width: 900px; /* Max-width को 800px से 900px किया, ताकि बड़ी स्क्रीन पर भी अच्छा दिखे */
-    margin: 40px auto; 
-    padding: 50px; /* डेस्कटॉप पर और ज़्यादा पैडिंग */
+  .post-actions button {
+      flex-grow: 1; 
+      text-align: center;
+  }
+  
+  .post-user {
+      font-size: 14px;
+  }
+  .timestamp {
+      font-size: 10px;
   }
 }
