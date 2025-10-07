@@ -278,6 +278,11 @@ h2 {
 
   .profile-info {
     width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
   }
 
   h2 {
@@ -289,8 +294,10 @@ h2 {
     margin-bottom: 25px;
     width: 100%;
   }
+
 }
-/* B. टैबलेट / छोटे लैपटॉप (601px से 900px) */
+
+
 @media (min-width: 601px) and (max-width: 900px) {
   .App {
     max-width: 95%;
@@ -299,6 +306,7 @@ h2 {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
   }
+
 }
 
 @media (max-width: 600px) {
