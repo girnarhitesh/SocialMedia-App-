@@ -1,42 +1,293 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* App.css */
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #e4e6eb; /* Facebook/Social Media जैसा हल्का बैकग्राउंड */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.App {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes logo-spin {
+h2 {
+    color: #1c1e21;
+    margin-top: 0;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+/* इनपुट कंटेनर स्टाइलिंग */
+.post-input-container {
+  display: flex;
+  margin-bottom: 25px;
+  gap: 10px;
+}
+
+.post-input-container input {
+  flex-grow: 1;
+  padding: 12px 18px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.post-input-container input:focus {
+  border-color: #1877f2;
+}
+
+.post-input-container button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: #1877f2;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.2s, opacity 0.2s;
+}
+
+/* डिसेबल बटन स्टाइल */
+.post-input-container button:disabled {
+    background-color: #a2c8f8;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.post-input-container button:hover:enabled {
+  background-color: #145dbf;
+}
+
+/* पोस्ट्स लिस्ट स्टाइलिंग */
+.post {
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+}
+
+.post-text {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #1c1e21;
+}
+
+.timestamp {
+  color: #606770;
+  font-size: 12px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: flex-end; /* बटन को दाएँ तरफ़ ले जाएँ */
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.post-actions button {
+    background: none;
+    border: none;
+    color: #606770;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.like-btn {
+    color: #1877f2 !important; /* लाइक बटन का रंग नीला करें */
+    font-weight: 600;
+}
+
+.like-btn:hover, .delete-btn:hover {
+    background-color: #f2f2f2;
+}
+
+.no-posts {
+    text-align: center;
+    color: #606770;
+    padding: 20px;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+/* App.css (पुराने कोड को इससे बदल दें) */
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #e4e6eb; 
+}
+
+.App {
+  max-width: 700px; /* थोड़ा चौड़ा किया गया */
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 { /* unchanged */ }
+
+/* Profile Info */
+.profile-info {
+    text-align: right;
+    font-size: 14px;
+    color: #606770;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Sorting Control */
+.sorting-control {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #606770;
+}
+.sorting-control select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+/* Post Input Container (unchanged) */
+.post-input-container {
+  display: flex;
+  margin-bottom: 25px;
+  gap: 10px;
+}
+.post-input-container input { /* unchanged */ }
+.post-input-container button { /* unchanged */ }
+.post-input-container button:disabled { /* unchanged */ }
+.post-input-container button:hover:enabled { /* unchanged */ }
+
+
+/* पोस्ट्स लिस्ट स्टाइलिंग */
+.post {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.post-user {
+    font-weight: bold;
+    color: #1c1e21;
+}
+
+.post-text { /* unchanged */ }
+.timestamp { /* unchanged */ }
+
+.post-actions {
+  /* ... (same as before) ... */
+  display: flex;
+  justify-content: flex-end; 
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+}
+.post-actions button { /* unchanged */ }
+.like-btn { /* unchanged */ }
+.like-btn:hover, .delete-btn:hover { /* unchanged */ }
+
+/* 💡 Comments Section Styles */
+.comments-section {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+}
+.comments-section h4 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #1c1e21;
+}
+
+.comment-input-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.comment-input-area input {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+.comment-input-area button {
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.comment-list {
+    padding-left: 5px;
+}
+.comment-item {
+    background-color: #f7f7f7;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+.comment-time {
+    color: #999;
+    font-size: 11px;
+}
+
+.no-posts { /* unchanged */ }
+
+/* 💡 नया: ट्रांज़िशन और एनिमेशन स्टाइलिंग */
+
+/* Keyframes: पोस्ट/कमेंट को धीरे से ऊपर स्लाइड और फ़ेड-इन करता है */
+@keyframes fadeInSlide {
   from {
-    transform: rotate(0deg);
+      opacity: 0;
+      transform: translateY(20px); /* 20px नीचे से शुरू हो */
   }
   to {
-    transform: rotate(360deg);
+      opacity: 1;
+      transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* नए जोड़े गए पोस्ट/कमेंट पर लागू होने वाला क्लास */
+.post.fade-in {
+  /* एनिमेशन को 500ms तक चलने दें */
+  animation: fadeInSlide 0.5s ease-out; 
 }
 
-.card {
-  padding: 2em;
+.comment-item.fade-in {
+  /* कमेंट्स के लिए भी वही एनिमेशन */
+  animation: fadeInSlide 0.5s ease-out;
 }
 
-.read-the-docs {
-  color: #888;
-}
+/* बाकी सारा CSS कोड (जो आपने पहले जोड़ा था) वही रहेगा। */
